@@ -1,10 +1,12 @@
+import photosGet from '@/actions/photos-get'
 import Feed from '@/components/feed/feed'
 
-export default function Home() {
+export default async function Home() {
+  const data = await photosGet()
+
   return (
     <section className="container mainContainer">
-      <h1 className="title">dogs next</h1>
-      <Feed />
+      <Feed photos={data} />
     </section>
   )
 }

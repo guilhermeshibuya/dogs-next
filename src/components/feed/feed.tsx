@@ -1,9 +1,10 @@
+import { Photo } from '@/types/Photo'
 import FeedPhotos from './feed-photos'
 
-export default async function Feed() {
+export default async function Feed({ photos }: { photos: Photo[] }) {
   return (
-    <section>
-      <FeedPhotos />
-    </section>
+    <div>
+      <FeedPhotos photos={photos} />
+    </div>
   )
 }
