@@ -1,7 +1,10 @@
+import Feed from '@/components/feed/feed'
+
 export default function Home() {
   return (
-    <main>
+    <section className="container mainContainer">
       <h1 className="title">dogs next</h1>
-    </main>
+      <Feed />
+    </section>
   )
 }
