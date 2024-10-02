@@ -10,7 +10,7 @@ export default async function commentPost(state: {}, formData: FormData) {
   const comment = formData.get('comment') as string | null
   const id = formData.get('id') as string | null
 
-  const token = cookies().get('dogs@token')
+  const token = cookies().get('dogs@token')?.value
 
   try {
     if (!token || !comment || !id) throw new Error('Preencha os dados')
