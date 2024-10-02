@@ -12,7 +12,7 @@ export default async function photoPost(state: {}, formData: FormData) {
   const peso = formData.get('peso') as string | null
   const img = formData.get('img') as File
 
-  const token = cookies().get('dogs@token')
+  const token = cookies().get('dogs@token')?.value
 
   try {
     if (!token || !nome || !idade || !peso || img.size === 0)
@@ -25,7 +25,7 @@ export default async function photoPost(state: {}, formData: FormData) {
       },
       body: formData,
     })
-    const json = await response.json()
+    console.log(response.body)
     if (!response.ok) throw new Error('Email ou usuário já cadastrado')
   } catch (err: unknown) {
     return apiError(err)

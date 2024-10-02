@@ -53,7 +53,7 @@ export default function ContaPhotoPost() {
           onChange={handleImgChange}
         />
         <ErrorMessage error={state.error} />
-        <ButtonForm type="submit">Enviar</ButtonForm>
+        <ButtonForm>Enviar</ButtonForm>
       </form>
       <div>
         <div
