@@ -1,7 +1,7 @@
 'use server'
 
 import apiError from '@/utils/api-error'
-import { COMMENT_POST, CREATE_USER, PHOTO_POST } from '@/utils/api'
+import { COMMENT_POST } from '@/utils/api'
 import { cookies } from 'next/headers'
 import { revalidateTag } from 'next/cache'
 import { Comment } from '@/types/comment'

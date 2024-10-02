@@ -35,13 +35,17 @@ export default function PhotoCommentsForm({
   useEffect(() => {
     if (state.ok && state.data) {
       setComments((comments) => [...comments, state.data])
+      setComment('')
     }
   }, [state, setComments])
 
   const [comment, setComment] = useState('')
 
   return (
-    <form className={`${styles.form} ${single ? styles.single : ''}`}>
+    <form
+      action={action}
+      className={`${styles.form} ${single ? styles.single : ''}`}
+    >
       <input type="hidden" name="id" id="id" value={id} />
       <textarea
         className={styles.textarea}
