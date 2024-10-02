@@ -1,14 +1,14 @@
-import { Photo } from '@/types/Photo'
+import { Photo } from '@/types/photo'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './feed-photos.module.css'
 
-export default async function FeedPhotos({ photos }: { photos: Photo[] }) {
+export default function FeedPhotos({ photos }: { photos: Photo[] }) {
   return (
     <ul className={`${styles.feed} animeLeft`}>
       {photos.map((photo, i) => (
         <li className={styles.photo} key={photo.id + i}>
-          <Link href={`/foto.${photo.id}`} scroll={false}>
+          <Link href={`/foto/${photo.id}`} scroll={false}>
             <Image
               src={photo.src}
               alt={photo.title}
